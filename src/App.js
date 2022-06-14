@@ -79,6 +79,8 @@ function MyButton(props) {
   );
 }
 
+// This is a test
+
 // This is another way of creating the function component, but better the version above (MyButton).
 function MyButton2(props) {
   return (
