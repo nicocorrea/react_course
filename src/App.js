@@ -9,6 +9,7 @@ function App() {
     type: "text",
     maxLength: "3",
   };
+
   // return flag ? <SayHello /> : <p>NadaPapi</p>;  Conditional Rendering
   return (
     <>
@@ -36,10 +37,7 @@ function App() {
         <h1>Children One</h1>
         <p>Children Two</p>
       </Comment>
-      <button onClick={handleClick}>Button</button>
       <br />
-      <MyButton onClick={handleClick}>Button2</MyButton>
-      <MyButton2 onClick={handleClick}>Button3</MyButton2>
     </>
   );
 }
@@ -64,41 +62,9 @@ function Comment({ username, time, children }) {
   );
 }
 
-function handleClick(event) {
-  console.log(event, event.nativeEvent);
-}
-
-function MyButton(props) {
-  return (
-    <button
-      {...props}
-      style={{
-        color: "red",
-      }}
-    />
-  );
-}
-
-// This is a test
-
-// This is another way of creating the function component, but better the version above (MyButton).
-function MyButton2(props) {
-  return (
-    <button
-      onClick={props.onClick}
-      style={{
-        color: "blue",
-      }}
-    >
-      {props.children}
-    </button>
-  );
-}
-
 export default App;
 
-// This way you can return two elements
-// to the DOM instead of these two embedded into
+// This way you can return two DOM elements to the DOM instead of these two embedded into
 // a div (or span)
 //
 // function App() {
