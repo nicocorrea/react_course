@@ -1,5 +1,13 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
+import Counter from "./Counter";
+import {
+  CallBackRef,
+  ForwardRef,
+  ReferenceNotOptimal,
+  ReferenceOption1,
+  ReferenceOption2,
+} from "./Ref";
 
 function App() {
   const flag = true;
@@ -9,6 +17,7 @@ function App() {
     type: "text",
     maxLength: "3",
   };
+  const [isShown, setIsShown] = useState(true);
 
   // return flag ? <SayHello /> : <p>NadaPapi</p>;  Conditional Rendering
   return (
@@ -38,6 +47,16 @@ function App() {
         <p>Children Two</p>
       </Comment>
       <br />
+      <button onClick={() => setIsShown(!isShown)}>
+        {isShown ? "Hide Counter" : "Show Counter"}
+      </button>
+      {isShown ? <Counter /> : null}
+      <hr />
+      <ReferenceNotOptimal />
+      <ReferenceOption1 />
+      <ReferenceOption2 />
+      <ForwardRef />
+      <CallBackRef />
     </>
   );
 }
