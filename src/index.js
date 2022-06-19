@@ -17,6 +17,7 @@ import Profile from "./ContextProfile";
 import ComponentList from "./ComponentList";
 import Performance from "./Performance";
 import CustomHook from "./CustomHook";
+import Portal from "./Portal";
 //import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -55,6 +56,9 @@ root.render(
     <hr />
     <h2>Custom Hook</h2>
     <CustomHook />
+    <hr />
+    <h2>Portals</h2>
+    <Portal />
   </React.StrictMode>
 );
 

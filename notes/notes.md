@@ -251,3 +251,9 @@ const LazyComponent = react.lazy(() => import("./MyComponent"));
 <strong>Custom Hook</strong>: A helper function that uses hooks. When hook code becomes redundant or too long to easily ready, it can be helpful to move that code into a helper function. To denote that this helper function uses a hook itself, the name should be prefixed with <em>use</em> just like the built-in react hook functions.
 
 <hr />
+
+<strong>Portal</strong>: A built-in method for rendering React elements into a DOM node outside of the parent React tree.
+
+A portal is created by using the <em>ReactDOM.createPortal</em> function, which takes in a React element as the first parameter and the DOM node as the second parameter. The element will be appended to that DOM node, but it will still act the same as any other element in the original React tree (it can still take props, read from context providers and have events bubble up).
+
+<hr />

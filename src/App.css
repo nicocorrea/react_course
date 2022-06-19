@@ -32,11 +32,30 @@
   text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  position: relative;
+  z-index: 0;
+  background-color: lightgreen;
+  height: 100px;
+  padding: 10px;
+}
+
+.other {
+  position: relative;
+  z-index: 1;
+  background-color: orange;
+  height: 100px;
+  padding: 10px;
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  background-color: lightblue;
+  width: 90vw;
+  height: 75vh;
+  padding: 10px;
+  top: 5vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
