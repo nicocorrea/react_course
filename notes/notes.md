@@ -205,3 +205,43 @@ As a reminder, a fragment is:
 ```
 
 <hr />
+
+## <strong>Performance</strong>
+
+How to make the less number of renders possible.
+
+<strong>useMemo</strong>: A React hook for memoizing a value. The <em>useMemo</em> functions takes in a function that returns a value to be memoized and a dependency array. The <em>useMemoe</em> function then returns the memoized value, and it only calls the passed in function to recalculate the value if an item in the dependency array changes. For example:
+
+```js
+const value = useMemo(() => slowFunction(x, y), [x, y]);
+```
+
+<strong>useCallback</strong>: A React hook for memoizing a function. This function works the exact same as <em>useMemo</em>, except rather than memoizing the return value of a function, it memoizes the entire function. This can be useful for a variety of reasons, such as if a callback is passed into a dependency array that requires it to not change on every render. For example:
+
+```js
+const callback = useCallback(() => console.log(x, y), [x, y]);
+```
+
+<strong>React.memo</strong>: A React <strong>higher-order components</strong> that takes in a component and returns a memoized version of that component. If the props have not changed, wrapping a component in <em>React.memo</em> will cause it to avoid re-rendering. This function can optionally also take in a second callback function as a parameter to determine when the component should re-render with more fine control. For example, this component will only need to re-render when the number prop changes:
+
+```js
+function areEqual(oldProps, newProps) {
+  return oldProps.number === newProps.render;
+}
+
+const MemoizedComponent = React.memo(myComponent, areEqual);
+```
+
+<strong>React.lazy</strong>: A React function for dynamically importing components, creating a potential performance boost when certain components are included in a module but not necessary for the initial render. The <em>lazy</em> function takes in a callback function that is run when the component is used, and this function should return a call to the <em>import</em> function. For example:
+
+```js
+const LazyComponent = react.lazy(() => import("./MyComponent"));
+```
+
+<strong>React.Suspense</strong>: A react component for specifying a fallback interface while a child component is preparing to render (such as waiting for a lazy import). The <em>Suspense</em> component takes a <em>fallback</em> prop of a React element, and its <em>children</em> prop is a suspending component. For example:
+
+```js
+<React.Suspense fallback={<LoadingIndicator />}>
+  <LazyComponent />
+</React.Suspense>
+```

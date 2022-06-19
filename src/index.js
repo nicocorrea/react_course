@@ -15,6 +15,7 @@ import Imperative from "./Imperative";
 import { UserContext, UserContextProvider } from "./UserContext";
 import Profile from "./ContextProfile";
 import ComponentList from "./ComponentList";
+import Performance from "./Performance";
 //import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -47,6 +48,10 @@ root.render(
     <hr />
     <h2>Components List</h2>
     <ComponentList />
+    <hr />
+    <h2>Performance</h2>
+    <Performance />
+    <hr />
   </React.StrictMode>
 );
 
