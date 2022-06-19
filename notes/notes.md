@@ -135,3 +135,21 @@ const child = forwardRef(function (props, ref) {
 ```
 
 <hr />
+<strong>useImperativeHandle</strong>: A React hook for customizing the value provided to a parent component when using a <strong>ref</strong>. The <em>useImperativeHandle</em> hook takes in a ref as the first parameter, followed by a callback function and an optional dependency array. <br />
+The return value of the callback function will act as the <em>current</em> value of the ref. If any item in the dependency array changes between renders, the callback function will be invoked again to recalculate the <em>current</em> value. <br />
+Since <em>useImperativeHandle</em> requires a ref on a custom component, it should always be used with <em>React.forwardRef</em>. For example:
+
+```js
+forwardRef(function (props, ref) {
+  const [count, setCount] = useState(0);
+
+  useImperativeHandle(ref, () => {
+    return {
+      resetCount: () => setCount(0),
+    };
+  });
+
+  return <button onClick={() =>
+    setCount(count + 1)>Increment</button>;
+});
+```

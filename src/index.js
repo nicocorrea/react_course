@@ -4,6 +4,14 @@ import "./index.css";
 import App from "./App";
 import State from "./State";
 import Reduce from "./Reducer";
+import {
+  ReferenceNotOptimal,
+  ReferenceOption1,
+  ReferenceOption2,
+  ForwardRef,
+  CallBackRef,
+} from "./Ref";
+import Imperative from "./Imperative";
 //import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -14,6 +22,14 @@ root.render(
     <State />
     <hr />
     <Reduce />
+    <hr />
+    <ReferenceNotOptimal />
+    <ReferenceOption1 />
+    <ReferenceOption2 />
+    <ForwardRef />
+    <CallBackRef />
+    <hr />
+    <Imperative />
   </React.StrictMode>
 );
 

@@ -52,11 +52,6 @@ function App() {
       </button>
       {isShown ? <Counter /> : null}
       <hr />
-      <ReferenceNotOptimal />
-      <ReferenceOption1 />
-      <ReferenceOption2 />
-      <ForwardRef />
-      <CallBackRef />
     </>
   );
 }
