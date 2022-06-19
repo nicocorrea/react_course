@@ -14,6 +14,7 @@ import {
 import Imperative from "./Imperative";
 import { UserContext, UserContextProvider } from "./UserContext";
 import Profile from "./ContextProfile";
+import ComponentList from "./ComponentList";
 //import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -21,23 +22,31 @@ root.render(
   <React.StrictMode>
     <App />
     <hr />
+    <h2>State</h2>
     <State />
     <hr />
+    <h2>Reduce</h2>
     <Reduce />
     <hr />
+    <h2>Refs</h2>
     <ReferenceNotOptimal />
     <ReferenceOption1 />
     <ReferenceOption2 />
     <ForwardRef />
     <CallBackRef />
     <hr />
+    <h2>Imperative React</h2>
     <Imperative />
     <hr />
+    <h2>Contexts</h2>
     <main>
       <UserContextProvider>
         <AppInternal />
       </UserContextProvider>
     </main>
+    <hr />
+    <h2>Components List</h2>
+    <ComponentList />
   </React.StrictMode>
 );
 

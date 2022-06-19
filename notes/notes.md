@@ -182,3 +182,26 @@ return (
 const theme = useContext(ThemeContext);
 console.log(theme.mode); // 'dark'
 ```
+
+<hr />
+<strong>Key Prop</strong>: A prop passed to each element in a list to help React keep track of those elements. Key props should be unique identifiers. By passing key props, if the list changes, React can easily know which elements need to be mounted, updated, and unmounted. For example, when rendering an array of messages from the server, message IDs could be used as a key prop:
+
+```js
+return(
+  {
+    messages.map(message => {
+      return <p key={message.id}>[message.text]</p>
+    })
+  }
+)
+```
+
+<hr />
+As a reminder, a fragment is:
+
+```JS
+<>
+</>
+```
+
+<hr />

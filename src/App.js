@@ -22,6 +22,7 @@ function App() {
   // return flag ? <SayHello /> : <p>NadaPapi</p>;  Conditional Rendering
   return (
     <>
+      <h2>Basics</h2>
       {/* Whenever inside curly braces, we are in JS, so the syntax follow it */}
       {/* Short Circuit Evaluation */}
       {flag && <h1>True</h1>}
