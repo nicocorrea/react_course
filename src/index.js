@@ -16,6 +16,7 @@ import { UserContext, UserContextProvider } from "./UserContext";
 import Profile from "./ContextProfile";
 import ComponentList from "./ComponentList";
 import Performance from "./Performance";
+import CustomHook from "./CustomHook";
 //import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -52,6 +53,8 @@ root.render(
     <h2>Performance</h2>
     <Performance />
     <hr />
+    <h2>Custom Hook</h2>
+    <CustomHook />
   </React.StrictMode>
 );
 

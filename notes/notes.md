@@ -245,3 +245,9 @@ const LazyComponent = react.lazy(() => import("./MyComponent"));
   <LazyComponent />
 </React.Suspense>
 ```
+
+<hr />
+
+<strong>Custom Hook</strong>: A helper function that uses hooks. When hook code becomes redundant or too long to easily ready, it can be helpful to move that code into a helper function. To denote that this helper function uses a hook itself, the name should be prefixed with <em>use</em> just like the built-in react hook functions.
+
+<hr />
