@@ -153,3 +153,32 @@ forwardRef(function (props, ref) {
     setCount(count + 1)>Increment</button>;
 });
 ```
+
+<hr />
+
+<strong>Context</strong>: A way to pass values down a component tree without needing to pass props through every component (known as <strong>prop drilling</strong>). Contexts are generally useful for global state needed throughout an application or page, which would be inconvenient to pass as props to every element needing it.
+
+<strong>React.createContext</strong>: A react function for creating a context object. This function takes in a default value, which will be used if there is no matching context provider in a tree. For example, this would create a context that could be used to keep track of a user's selected theme:
+
+```js
+const ThemeContext = createContext({
+  mode: "dark",
+});
+```
+
+This context would then have a <strong>provider</strong> component, which must be above any components in the tree that wish to use the context. The <em>value</em> prop will be passed as the value to all children using the context. For example:
+
+```js
+return (
+  <ThemeContext.Provider value={{ mode: "dark" }}>
+    {props.children}
+  </ThemeContext.Provider>
+);
+```
+
+<strong>useContext</strong>A React hook for using a context. The <em>useContext</em> function takes in a context object created with <em>createContext</em>, and it returns the value from the first <strong>context provider</strong> of that context above it in the tree. For example:
+
+```js
+const theme = useContext(ThemeContext);
+console.log(theme.mode); // 'dark'
+```
